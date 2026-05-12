@@ -71,6 +71,41 @@ function FeatureCard({title, text, status, href}) {
   );
 }
 
+function MarketIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M6.6 9.2 7.4 5h9.2l.8 4.2" />
+      <path d="M5 9.2h14l-1.1 10.3H6.1L5 9.2Z" />
+      <path d="M9 12.2V8.1a3 3 0 0 1 6 0v4.1" />
+    </svg>
+  );
+}
+
+function DiscordIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M8.7 17.4c-1.2-.4-2.2-1-3.1-1.8.2-3.7 1.1-6.4 2.8-8.6 1.1-.5 2.2-.8 3.4-.9l.3.7c1.3-.2 2.6-.2 3.9 0l.3-.7c1.2.1 2.3.4 3.4.9 1.7 2.2 2.6 4.9 2.8 8.6-.9.8-1.9 1.4-3.1 1.8l-.7-1.1c.4-.1.8-.3 1.2-.6-2.4 1.1-5.4 1.1-7.8 0 .4.3.8.5 1.2.6l-.6 1.1Z" />
+      <path d="M10.1 13.6c.7 0 1.2-.6 1.2-1.3s-.5-1.3-1.2-1.3-1.2.6-1.2 1.3.5 1.3 1.2 1.3Z" />
+      <path d="M15.9 13.6c.7 0 1.2-.6 1.2-1.3s-.5-1.3-1.2-1.3-1.2.6-1.2 1.3.5 1.3 1.2 1.3Z" />
+    </svg>
+  );
+}
+
+const communityLinks = [
+  {
+    title: 'Superhive',
+    label: 'Superhive, formerly Blender Market',
+    href: 'https://superhivemarket.com/products/easeam',
+    icon: <MarketIcon />,
+  },
+  {
+    title: 'Discord',
+    label: 'Join the Easeam Discord server',
+    href: 'https://discord.gg/MznXAXeYQN',
+    icon: <DiscordIcon />,
+  },
+];
+
 export default function Home() {
   return (
     <Layout
@@ -127,13 +162,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="operator-structure" className="sectionBand">
+        <section id="community-links" className="sectionBand">
           <div className="container">
-            <h2>Operator Asset Structure</h2>
-            <p>
-              Each operator now owns its own folder under <code>docs</code>. Drop the GIF beside that
-              operator's Markdown file, then import it directly from the page.
-            </p>
+            <h2>Get Easeam & Support</h2>
+            <div className="communityLinkGrid">
+              {communityLinks.map((item) => (
+                <a key={item.title} className="communityLinkCard" href={item.href}>
+                  <span className="communityLinkIcon">{item.icon}</span>
+                  <span>
+                    <strong>{item.title}</strong>
+                    <small>{item.label}</small>
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
       </main>

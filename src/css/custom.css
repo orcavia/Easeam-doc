@@ -146,6 +146,66 @@
   font-size: 12px;
 }
 
+.communityLinkGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.communityLinkCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 96px;
+  background: var(--easeam-panel);
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+  padding: 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.communityLinkCard:hover {
+  color: inherit;
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.communityLinkIcon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+  color: var(--ifm-color-primary);
+}
+
+.communityLinkIcon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.communityLinkCard strong,
+.communityLinkCard small {
+  display: block;
+}
+
+.communityLinkCard strong {
+  font-size: 18px;
+}
+
+.communityLinkCard small {
+  color: var(--easeam-muted);
+  line-height: 1.45;
+}
+
 .operatorGif {
   width: 100%;
   border: 1px solid var(--easeam-line);
@@ -154,7 +214,8 @@
 
 @media (max-width: 996px) {
   .heroGrid,
-  .featureGrid {
+  .featureGrid,
+  .communityLinkGrid {
     grid-template-columns: 1fr;
   }
 
