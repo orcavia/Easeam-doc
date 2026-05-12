@@ -6,10 +6,10 @@ const config = {
   favicon: 'img/favicon.svg',
 
   url: 'https://orcavia.github.io',
-  baseUrl: '/Easeam-doc/',
+  baseUrl: '/Easeam/',
 
   organizationName: 'orcavia',
-  projectName: 'Easeam-doc',
+  projectName: 'Easeam',
 
   onBrokenLinks: 'throw',
   markdown: {
