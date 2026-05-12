@@ -1,0 +1,178 @@
+:root {
+  --ifm-color-primary: #286f6c;
+  --ifm-color-primary-dark: #246461;
+  --ifm-color-primary-darker: #225e5b;
+  --ifm-color-primary-darkest: #1c4d4b;
+  --ifm-color-primary-light: #2c7a77;
+  --ifm-color-primary-lighter: #2e807d;
+  --ifm-color-primary-lightest: #34918d;
+  --ifm-background-color: #f7f7f2;
+  --ifm-navbar-background-color: #f7f7f2;
+  --ifm-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --easeam-ink: #202326;
+  --easeam-muted: #5c646b;
+  --easeam-panel: #ffffff;
+  --easeam-line: #d9ddd8;
+  --easeam-accent: #dd6b3d;
+}
+
+[data-theme='dark'] {
+  --ifm-background-color: #171a1f;
+  --ifm-navbar-background-color: #171a1f;
+  --easeam-ink: #f2f3ef;
+  --easeam-muted: #bac1c7;
+  --easeam-panel: #20242a;
+  --easeam-line: #353b43;
+  --easeam-accent: #f3a35e;
+}
+
+.heroShell {
+  padding: 72px 0 44px;
+  background:
+    linear-gradient(130deg, rgba(40, 111, 108, 0.14), transparent 42%),
+    linear-gradient(20deg, rgba(221, 107, 61, 0.16), transparent 50%);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.heroTitle {
+  color: var(--easeam-ink);
+  font-size: 64px;
+  line-height: 0.95;
+  margin: 0 0 20px;
+}
+
+.heroLead {
+  color: var(--easeam-muted);
+  font-size: 20px;
+  line-height: 1.55;
+  max-width: 680px;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button.button--accent {
+  background: var(--easeam-accent);
+  border-color: var(--easeam-accent);
+  color: #1d160f;
+}
+
+.button.button--quiet {
+  border-color: var(--easeam-line);
+  color: var(--easeam-ink);
+}
+
+.workflowPanel {
+  background: var(--easeam-panel);
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 18px 50px rgba(28, 43, 50, 0.12);
+}
+
+.workflowPanel h2 {
+  margin-top: 0;
+}
+
+.workflowList {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflowList li {
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: 14px;
+}
+
+.sectionBand {
+  padding: 56px 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.featureCard {
+  display: flex;
+  min-height: 156px;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--easeam-panel);
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+  padding: 18px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.featureCard:hover {
+  color: inherit;
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.featureCard h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.featureCard p {
+  margin: 0;
+  color: var(--easeam-muted);
+}
+
+.featureBadge {
+  width: fit-content;
+  margin-top: 18px;
+  padding: 3px 8px;
+  border: 1px solid var(--easeam-line);
+  border-radius: 999px;
+  color: var(--easeam-muted);
+  font-size: 12px;
+}
+
+.operatorGif {
+  width: 100%;
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+}
+
+@media (max-width: 996px) {
+  .heroGrid,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroShell {
+    padding-top: 48px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroLead {
+    font-size: 18px;
+  }
+}

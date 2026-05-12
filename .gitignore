@@ -1,0 +1,8 @@
+node_modules/
+.npm-cache/
+.docusaurus/
+build/
+*.log
+.frames/
+.docs-server.pid
+docs-server.log
