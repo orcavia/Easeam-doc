@@ -41,6 +41,17 @@ const config = {
 
   themeConfig: {
     image: 'img/easeam-social-card.svg',
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
+    },
+    announcementBar: {
+      id: 'development-status',
+      content: 'This documentation is still in development. Easeam 2 has not been released yet.',
+      backgroundColor: '#f3a35e',
+      textColor: '#1d160f',
+      isCloseable: false,
+    },
     navbar: {
       title: 'Easeam 2',
       items: [

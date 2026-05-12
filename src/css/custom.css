@@ -54,6 +54,18 @@
   max-width: 680px;
 }
 
+.developmentNotice {
+  display: inline-flex;
+  margin: 0 0 18px;
+  padding: 6px 10px;
+  border: 1px solid rgba(243, 163, 94, 0.55);
+  border-radius: 8px;
+  background: rgba(243, 163, 94, 0.14);
+  color: var(--easeam-accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .heroActions {
   display: flex;
   flex-wrap: wrap;

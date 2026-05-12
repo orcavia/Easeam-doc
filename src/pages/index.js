@@ -116,6 +116,9 @@ export default function Home() {
           <div className="container heroGrid">
             <div>
               <h1 className="heroTitle">Easeam 2</h1>
+              <p className="developmentNotice">
+                Documentation in development. Easeam 2 has not been released yet.
+              </p>
               <p className="heroLead">
                 A focused Blender UV toolkit for artists who want seam marking to feel direct,
                 visual, and fast. Easeam keeps common UV prep jobs close to the viewport:
