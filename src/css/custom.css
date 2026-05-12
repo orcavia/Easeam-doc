@@ -26,6 +26,33 @@
   --easeam-accent: #f3a35e;
 }
 
+.navbar-orcavia-link {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid var(--easeam-line);
+  border-radius: 6px;
+  color: var(--ifm-navbar-link-color);
+  margin: 0 6px;
+}
+
+.navbar-orcavia-link:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: none;
+}
+
+.navbar-orcavia-link svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
 .heroShell {
   padding: 72px 0 44px;
   background:
@@ -225,6 +252,13 @@
 }
 
 @media (max-width: 996px) {
+  .navbar-orcavia-link {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+  }
+
   .heroGrid,
   .featureGrid,
   .communityLinkGrid {
