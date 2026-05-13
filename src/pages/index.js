@@ -31,7 +31,7 @@ const features = [
     title: 'Re-Unwrap',
     status: 'Coming soon',
     href: '/operators/actions/reunwrap',
-    text: 'Run a fast unwrap pass using Easeam settings after seam changes.',
+    text: 'Force re-unwrap the whole mesh using Easeam settings after seam changes.',
   },
   {
     title: 'Tri-Planar Unwrap',
@@ -100,11 +100,20 @@ const communityLinks = [
   },
   {
     title: 'Discord',
-    label: 'Join the Easeam Discord server',
+    label: 'Join our Discord',
     href: 'https://discord.gg/MznXAXeYQN',
     icon: <DiscordIcon />,
   },
 ];
+
+function ExternalLinkIcon() {
+  return (
+    <svg className="buttonIcon" aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
@@ -125,38 +134,36 @@ export default function Home() {
                 hover to preview, click to commit, then unwrap with the same settings you already use.
               </p>
               <div className="heroActions">
-                <Link className="button button--accent button--lg" to="/operators/modal-operators/mark-around-flat">
-                  Open Mark Around Flat
-                </Link>
-                <Link className="button button--quiet button--lg" to="/operators/modal-operators/mark-around-flat">
-                  Browse features
-                </Link>
+                <a
+                  className="button button--product button--lg"
+                  href="https://superhivemarket.com/products/easeam"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Get Easeam
+                  <ExternalLinkIcon />
+                </a>
               </div>
             </div>
             <aside className="workflowPanel">
               <h2>Built around viewport flow</h2>
               <ul className="workflowList">
                 <li>
-                  <strong>Preview first.</strong> Modal tools show the seam result before it is committed.
+                  <strong>Easy marking seam.</strong> Mark seams directly from the viewport with fast preview and commit controls.
                 </li>
                 <li>
-                  <strong>Respect existing islands.</strong> Operators avoid crossing seams that already define UV boundaries.
+                  <strong>Modal operator available.</strong> Work interactively with modal tools for Mark Around Flat, Tube Seam, and seam loops.
                 </li>
                 <li>
-                  <strong>Unwrap when needed.</strong> Choose no unwrap, selected unwrap, or live unwrap depending on the mesh.
+                  <strong>Easy managing UV channel.</strong> Add, rename, clean, and align UV maps across multiple selected objects.
                 </li>
               </ul>
             </aside>
           </div>
         </section>
 
-        <section id="features" className="sectionBand">
+        <section className="sectionBand">
           <div className="container">
-            <h2>Feature Map</h2>
-            <p>
-              This is the starting index for the operator docs. For now, Mark Around Flat and Tube Seam
-              are complete example pages; the rest already have folders prepared for future GIFs and notes.
-            </p>
+            <h2 id="features">Feature Map</h2>
             <div className="featureGrid">
               {features.map((feature) => (
                 <FeatureCard key={feature.title} {...feature} />

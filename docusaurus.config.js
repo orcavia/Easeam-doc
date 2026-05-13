@@ -57,7 +57,7 @@ const config = {
       isCloseable: false,
     },
     navbar: {
-      title: 'Easeam 2',
+      title: '',
       items: [
         {
           type: 'docSidebar',
@@ -74,26 +74,7 @@ const config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Mark Around Flat',
-              to: '/operators/modal-operators/mark-around-flat',
-            },
-          ],
-        },
-        {
-          title: 'Project',
-          items: [
-            {
-              label: 'Feedback tracker',
-              href: 'https://github.com/orcavia/Easeam-Feedback/blob/main/README.md',
-            },
-          ],
-        },
-      ],
+      links: [],
       copyright: `Copyright ${new Date().getFullYear()} Orcavia. Easeam is GPL-2.0-or-later.`,
     },
     prism: {

@@ -53,6 +53,10 @@
   stroke-width: 2;
 }
 
+.navbar__title {
+  display: none;
+}
+
 .heroShell {
   padding: 72px 0 44px;
   background:
@@ -69,7 +73,7 @@
 
 .heroTitle {
   color: var(--easeam-ink);
-  font-size: 64px;
+  font-size: 70px;
   line-height: 0.95;
   margin: 0 0 20px;
 }
@@ -106,9 +110,47 @@
   color: #1d160f;
 }
 
+.button.button--product {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(243, 163, 94, 0.14);
+  border-color: var(--easeam-accent);
+  color: #fff !important;
+  box-shadow: inset 0 0 0 1px var(--easeam-accent);
+}
+
+.button.button--product:hover,
+.button.button--product:focus,
+.button.button--product:visited {
+  border-color: var(--easeam-accent);
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
 .button.button--quiet {
+  background: transparent;
   border-color: var(--easeam-line);
   color: var(--easeam-ink);
+  box-shadow: inset 0 0 0 1px var(--easeam-line);
+}
+
+.button.button--quiet:hover,
+.button.button--quiet:focus {
+  border-color: var(--easeam-accent);
+  color: var(--easeam-ink);
+  text-decoration: none;
+  box-shadow: inset 0 0 0 1px var(--easeam-accent);
 }
 
 .workflowPanel {
@@ -266,7 +308,7 @@
   }
 
   .heroTitle {
-    font-size: 48px;
+    font-size: 54px;
   }
 }
 
@@ -276,7 +318,7 @@
   }
 
   .heroTitle {
-    font-size: 40px;
+    font-size: 44px;
   }
 
   .heroLead {
@@ -297,16 +339,17 @@
   padding: 0 16px;
   border-radius: 999px;
   background: #5865f2;
-  color: #fff;
+  color: #fff !important;
   font-weight: 800;
   text-decoration: none;
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
 }
 
 .floatingDiscord:hover,
-.floatingDiscord:focus {
+.floatingDiscord:focus,
+.floatingDiscord:visited {
   background: #4752c4;
-  color: #fff;
+  color: #fff !important;
   text-decoration: none;
 }
 
