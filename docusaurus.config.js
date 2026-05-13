@@ -44,7 +44,7 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/easeam-social-card.svg',
+    image: 'img/easeam-discord-card.png',
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,

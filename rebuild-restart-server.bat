@@ -14,7 +14,11 @@ if errorlevel 1 (
   exit /b 1
 )
 
-if not exist node_modules (
+set "NEED_INSTALL="
+if not exist node_modules set "NEED_INSTALL=1"
+if not exist "node_modules\@docusaurus\faster" set "NEED_INSTALL=1"
+
+if defined NEED_INSTALL (
   echo Installing documentation dependencies...
   call npm ci --cache .npm-cache --prefer-offline
   if errorlevel 1 (
