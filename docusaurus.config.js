@@ -4,6 +4,10 @@ const config = {
   title: 'Easeam 2',
   tagline: 'Faster seam marking and UV prep for Blender artists.',
   favicon: 'img/favicon.svg',
+  future: {
+    v4: true,
+    faster: true,
+  },
 
   url: 'https://orcavia.github.io',
   baseUrl: '/Easeam-doc/',

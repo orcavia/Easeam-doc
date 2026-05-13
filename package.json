@@ -8,16 +8,19 @@
     "serve": "docusaurus serve"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.7.0",
-    "@docusaurus/preset-classic": "^3.7.0",
+    "@docusaurus/core": "^3.10.1",
+    "@docusaurus/faster": "^3.10.1",
+    "@docusaurus/preset-classic": "^3.10.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "devDependencies": {},
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
+  },
+  "overrides": {
+    "serialize-javascript": "7.0.5"
   }
 }
