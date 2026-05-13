@@ -9,7 +9,7 @@ const config = {
     faster: true,
   },
 
-  url: 'https://orcavia.github.io',
+  url: 'https://orcavia.dev',
   baseUrl: '/Easeam-doc/',
 
   organizationName: 'orcavia',
@@ -44,7 +44,13 @@ const config = {
   ],
 
   themeConfig: {
-    image: 'img/easeam-discord-card.png',
+    image: 'img/easeam-discord-embed.png',
+    metadata: [
+      {property: 'og:image:type', content: 'image/png'},
+      {property: 'og:image:width', content: '1200'},
+      {property: 'og:image:height', content: '630'},
+      {name: 'twitter:image:alt', content: 'Easeam 2 documentation preview'},
+    ],
     colorMode: {
       defaultMode: 'dark',
       respectPrefersColorScheme: false,
