@@ -11,7 +11,7 @@ const features = [
   },
   {
     title: 'Seam Edge Loop',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/modal-operators/seam-edge-loop',
     text: 'Hover an edge, preview the loop, and mark a seam without crossing existing seam borders.',
   },
