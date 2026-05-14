@@ -7,6 +7,8 @@ slug: /modal-operators/tube-seam
 ---
 
 import tubeSeamGif from './tube_seam.gif';
+import growPreviewGif from './grow_preview.gif';
+import toggleAutoAndAngleSetPreviewGif from './toggle_auto_and_angel_set_preview.gif';
 
 # Tube Seam
 
@@ -22,7 +24,22 @@ Tube Seam is built for cylindrical parts: cables, pipes, handles, sleeves, bolts
 - Marks the strip edges, seed edge, and boundary loop as seams.
 - Supports modal hover preview before the result is committed.
 - Can use manual Grow or Auto Grow based on the bend angle of the tube.
+- Shows quick overlays for Grow, Auto Grow, and Angle while you adjust the preview.
 - Can unwrap nothing, unwrap the affected selected faces, or use Blender Live Unwrap depending on Easeam's unwrap setting.
+
+## Preview examples
+
+### Grow the seam
+
+Use Grow when the seam should travel a specific number of tube steps from the hovered edge. In this example, the preview extends farther along the tube while the seam strip and boundary loop update before anything is committed.
+
+<img className="operatorGif" src={growPreviewGif} alt="Growing the Tube Seam preview in Blender" />
+
+### Use Auto Grow and set Angle
+
+Auto Grow follows the tube until the next bend reaches the Angle limit. Toggle it when you want the preview to find a natural stopping point, then hold `Shift` and move the mouse left or right to tune how strongly the tube is allowed to bend before growth stops.
+
+<img className="operatorGif" src={toggleAutoAndAngleSetPreviewGif} alt="Toggling Auto Grow and adjusting the Tube Seam angle preview in Blender" />
 
 ## Where to find it
 
@@ -83,17 +100,23 @@ Default: `0`
 
 Maximum: `32`
 
+While adjusting Grow in modal mode, Easeam shows a Grow overlay near the cursor so you can confirm the current value while watching the preview.
+
 ### Auto Grow
 
 Keeps growing along the tube until the next bend reaches the configured Angle. This is useful when the tube has a clear bend or end condition and you want Easeam to stop before the shape changes direction too much.
 
 Default: `Off`
 
+When Auto Grow is toggled in modal mode, the preview updates immediately so you can compare the automatic result against the manual Grow distance.
+
 ### Angle
 
 Only active when Auto Grow is enabled. Lower values stop earlier on subtle bends. Higher values allow the seam to continue across stronger bends.
 
 Default: `30 deg`
+
+While adjusting Angle in modal mode, Easeam shows an Angle overlay near the cursor so you can read the current threshold without opening a separate panel.
 
 ### Unwrap mode
 
@@ -123,5 +146,6 @@ The non-modal version operates on currently selected edges and supports multiple
 
 - Start from an edge that belongs to the tube strip you want to cut.
 - Use manual Grow for precise short cuts and Auto Grow for longer tube sections.
+- Toggle Auto Grow when the tube has a visible bend or end condition, then adjust Angle until the preview stops at the intended place.
 - If preview does not travel as expected, inspect the topology around the hovered edge; non-quad or branching areas can stop growth.
 - Keep unwrap mode on `None` while placing seams, then switch to `Selected` when you want immediate UV feedback.
