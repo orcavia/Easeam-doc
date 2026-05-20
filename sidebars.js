@@ -34,6 +34,7 @@ const sidebars = {
         'non-modal-operators/auto_unwrap_and_seam/auto-unwrap-and-seam',
         'non-modal-operators/seam_by_sharp_edge/seam-by-sharp-edge',
         'non-modal-operators/auto_seam_by_y_verts/auto-seam-by-y-verts',
+        'non-modal-operators/seam_from_uv_islands/seam-from-uv-islands',
       ],
     },
     {
