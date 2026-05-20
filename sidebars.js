@@ -8,6 +8,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'modal-operators/mark_around_flat/mark-around-flat',
+        'modal-operators/draw_path_seam/draw-path-seam',
         'modal-operators/seam_edge_loop/seam-edge-loop',
         'modal-operators/tube_seam/tube-seam',
       ],
