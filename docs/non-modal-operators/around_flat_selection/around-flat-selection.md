@@ -96,3 +96,7 @@ After it finishes, Easeam restores the original active object and mesh selection
 - Use Grow when the flat area is correct but the desired seam boundary should sit one or more face rings farther out.
 - Use `Unwrap` when you only want to update the affected region.
 - Use `Live Unwrap` when the full mesh should be considered during the unwrap step.
+
+## Related modal tool
+
+Use [Mark Around Flat](/operators/modal-operators/mark-around-flat) when you want hover preview and repeated modal marking before committing each seam.

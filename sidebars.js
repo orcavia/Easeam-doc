@@ -43,6 +43,12 @@ const sidebars = {
       collapsed: false,
       items: ['uv-maps/overview/overview'],
     },
+    {
+      type: 'category',
+      label: 'Shared Concepts',
+      collapsed: false,
+      items: ['shared/unwrap-mode'],
+    },
   ],
 };
 

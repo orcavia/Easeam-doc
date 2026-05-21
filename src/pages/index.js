@@ -177,6 +177,7 @@ export default function Home() {
             </aside>
           </div>
         </section>
+        <section className="sectionSeparator" aria-hidden="true" />
 
         <section className="sectionBand" id="features">
           <div className="container">

@@ -195,6 +195,13 @@
   padding: 56px 0;
 }
 
+.sectionSeparator {
+  height: 72px;
+  border-top: 1px solid var(--easeam-line);
+  border-bottom: 1px solid var(--easeam-line);
+  background: rgba(40, 111, 108, 0.04);
+}
+
 .sectionBand--support {
   padding-top: 22px;
 }
@@ -325,6 +332,12 @@
   width: 100%;
   border: 1px solid var(--easeam-line);
   border-radius: 8px;
+}
+
+.operatorGif--seventy {
+  display: block;
+  width: 70%;
+  margin-right: auto;
 }
 
 .footer {
