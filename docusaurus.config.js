@@ -76,11 +76,26 @@ const config = {
           label: 'Blender Market',
           position: 'right',
         },
+        {
+          href: 'https://orcavia.dev/',
+          label: 'Orcavia',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
-      links: [],
+      links: [
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Join our Discord',
+              href: 'https://discord.gg/MznXAXeYQN',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright ${new Date().getFullYear()} Orcavia. Easeam is GPL-2.0-or-later.`,
     },
     prism: {

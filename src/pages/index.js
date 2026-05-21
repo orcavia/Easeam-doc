@@ -52,10 +52,10 @@ const features = [
     text: 'Turn marked sharp edges or angle-based sharp edges into UV seams.',
   },
   {
-    title: 'UV Map Tools',
+    title: 'UV Maps Manager',
     status: 'Coming soon',
     href: '/operators/uv-maps/overview',
-    text: 'Add, delete, rename, prune, compare, and align UV map channels across mesh selections.',
+    text: 'Manage multiple UV channels across objects with the original Easeam workflow.',
   },
 ];
 
@@ -129,9 +129,9 @@ export default function Home() {
                 Documentation in development. Easeam 2 has not been released yet.
               </p>
               <p className="heroLead">
-                A focused Blender UV toolkit for artists who want seam marking to feel direct,
-                visual, and fast. Easeam keeps common UV prep jobs close to the viewport:
-                hover to preview, click to commit, then unwrap with the same settings you already use.
+                A focused Blender UV toolkit with multiple methods to speed up seam and UV
+                workflows. Use viewport previews, modal marking tools, UV map management,
+                and unwrap actions to handle common prep jobs without breaking your flow.
               </p>
               <div className="heroActions">
                 <a

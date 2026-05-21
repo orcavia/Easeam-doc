@@ -15,6 +15,7 @@ import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
+import Link from '@docusaurus/Link';
 
 import styles from './styles.module.css';
 
@@ -43,18 +44,18 @@ ${JSON.stringify(item, null, 2)}`,
   );
 }
 
-function OrcaviaHomeLink() {
+function DocsHomeLink() {
   return (
-    <a
+    <Link
       className="navbar-orcavia-link"
-      href="https://orcavia.dev"
-      aria-label="Orcavia home">
+      to="/"
+      aria-label="Documentation home">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M3 10.8 12 3l9 7.8" />
         <path d="M5.5 9.2V21h13V9.2" />
         <path d="M9.5 21v-6h5v6" />
       </svg>
-    </a>
+    </Link>
   );
 }
 
@@ -96,7 +97,7 @@ export default function NavbarContent() {
       }
       right={
         <>
-          <OrcaviaHomeLink />
+          <DocsHomeLink />
           <NavbarItems items={rightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (
