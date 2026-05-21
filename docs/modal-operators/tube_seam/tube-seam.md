@@ -25,7 +25,6 @@ Tube Seam is built for cylindrical parts: cables, pipes, handles, sleeves, bolts
 - Supports modal hover preview before the result is committed.
 - Can use manual Grow or Auto Grow based on the bend angle of the tube.
 - Shows quick overlays for Grow, Auto Grow, and Angle while you adjust the preview.
-- Can unwrap nothing, unwrap the affected selected faces, or use Blender Live Unwrap depending on Easeam's unwrap setting.
 
 ## Preview examples
 
@@ -88,7 +87,7 @@ The operator expects clean topology. It works best when the tube is quad-based a
 | `Shift` + scroll wheel | Increase or decrease manual Grow. |
 | Hold `Shift` + move mouse left/right | Adjust Auto Grow angle. |
 | Middle mouse or `Alt` navigation | Pass through to viewport navigation. |
-| Exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
+| `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
 ## Settings
 
@@ -118,17 +117,9 @@ Default: `30 deg`
 
 While adjusting Angle in modal mode, Easeam shows an Angle overlay near the cursor so you can read the current threshold without opening a separate panel.
 
-### Unwrap mode
+### Unwrap behavior
 
-Tube Seam follows the shared Easeam unwrap mode:
-
-| Mode | Behavior |
-| --- | --- |
-| `None` | Only marks seams. |
-| `Selected` | Marks seams, then unwraps the affected selected faces. |
-| `Live Unwrap` | Uses Blender's live unwrap behavior for the mesh during apply. |
-
-If the mesh is above the configured max face count, Easeam disables automatic unwrap for performance unless `Force Unwrap` is enabled.
+Tube Seam uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.
 
 ## Non-modal workflow
 
@@ -148,4 +139,3 @@ The non-modal version operates on currently selected edges and supports multiple
 - Use manual Grow for precise short cuts and Auto Grow for longer tube sections.
 - Toggle Auto Grow when the tube has a visible bend or end condition, then adjust Angle until the preview stops at the intended place.
 - If preview does not travel as expected, inspect the topology around the hovered edge; non-quad or branching areas can stop growth.
-- Keep unwrap mode on `None` while placing seams, then switch to `Selected` when you want immediate UV feedback.

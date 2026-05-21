@@ -340,6 +340,33 @@
   margin-right: auto;
 }
 
+.relatedOperatorCard {
+  margin: 18px 0 28px;
+}
+
+.relatedOperatorCard a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--easeam-line);
+  border-radius: 8px;
+  background: var(--easeam-panel);
+  color: inherit;
+  text-decoration: none;
+}
+
+.relatedOperatorCard a:hover,
+.relatedOperatorCard a:focus {
+  border-color: var(--ifm-color-primary);
+  color: inherit;
+  text-decoration: none;
+}
+
+.relatedOperatorCard span {
+  color: var(--easeam-muted);
+}
+
 .footer {
   padding: 16px 0;
   border-top: 1px solid var(--easeam-line);

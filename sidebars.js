@@ -7,10 +7,10 @@ const sidebars = {
       label: 'Modal Operators',
       collapsed: false,
       items: [
-        'modal-operators/mark_around_flat/mark-around-flat',
-        'modal-operators/draw_path_seam/draw-path-seam',
         'modal-operators/seam_edge_loop/seam-edge-loop',
+        'modal-operators/mark_around_flat/mark-around-flat',
         'modal-operators/tube_seam/tube-seam',
+        'modal-operators/draw_path_seam/draw-path-seam',
       ],
     },
     {

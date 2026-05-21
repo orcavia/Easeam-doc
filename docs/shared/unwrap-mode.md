@@ -19,3 +19,11 @@ Several Easeam operators can update UVs after marking seams. Use Unwrap Mode to 
 If the mesh is above the configured max face count, Easeam disables automatic unwrap for performance unless `Force Unwrap` is enabled.
 
 Keep Unwrap Mode on `None` while exploring seam placement. Switch to `Selected` or `Live Unwrap` when you are ready to update UVs.
+
+## Modal Live Unwrap Shortcut
+
+Modal tools can use `Ctrl` while applying to temporarily request Live Unwrap. If the Easeam preference is set to make Live Unwrap the default modal behavior, holding `Ctrl` temporarily disables it instead.
+
+## Modal Exit Re-Unwrap
+
+If `Modal Re-Unwrap On Exit` is enabled in Easeam preferences, leaving a modal tool runs a final re-unwrap after the session ends.

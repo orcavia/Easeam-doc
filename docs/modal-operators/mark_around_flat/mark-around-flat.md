@@ -74,6 +74,7 @@ Use it on flat or nearly flat parts of a mesh where you want an island boundary 
 | Left click, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue the tool. |
 | Hold `Shift` + move mouse left/right | Adjust the flatness angle. |
 | `Shift` + scroll wheel | Increase or decrease Grow. |
+| `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
 ## Settings
 

@@ -22,7 +22,6 @@ Draw Path Seam is for placing seam cuts by connecting vertices. Start the modal 
 - Keeps the modal tool running after each apply, using the last clicked vertex as the next start vertex.
 - Lets you clear the current start vertex and begin a new path without leaving the tool.
 - Supports multi-object edit sessions, with each path drawn on one mesh object at a time.
-- Can unwrap nothing, unwrap the affected selected area, or use Blender Live Unwrap depending on Easeam's unwrap setting.
 
 ## Where to find it
 
@@ -64,33 +63,14 @@ The path follows mesh edges and uses edge length to choose the shortest availabl
 | `A` | Clear the current first vertex so you can start a new path. |
 | Hold `Ctrl` while applying | Use Live Unwrap for that apply when the Easeam preference is enabled. |
 | Middle mouse or `Alt` navigation | Pass through to viewport navigation. |
-| Exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
+| `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
-## Settings
+## Unwrap behavior
 
-### Unwrap mode
-
-Draw Path Seam follows the shared Easeam unwrap mode:
-
-| Mode | Behavior |
-| --- | --- |
-| `None` | Only marks seams. |
-| `Selected` | Marks seams, then unwraps the affected selected faces. |
-| `Live Unwrap` | Uses Blender's live unwrap behavior for the mesh during apply. |
-
-If the mesh is above the configured max face count, Easeam disables automatic unwrap for performance unless `Force Unwrap` is enabled.
-
-### Live Unwrap shortcut
-
-By default, modal tools can use `Ctrl` while applying to temporarily request Live Unwrap. If the Easeam preference is set to make Live Unwrap the default modal behavior, holding `Ctrl` temporarily disables it instead.
-
-### Modal exit re-unwrap
-
-If `Modal Re-Unwrap On Exit` is enabled in Easeam preferences, leaving the modal tool runs a final re-unwrap after the session ends.
+Draw Path Seam uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.
 
 ## Tips
 
 - Use `A` when you want to start a separate seam path without exiting the modal tool.
 - Add seams in shorter segments if the shortest path chooses a route across the wrong side of the mesh.
-- Keep unwrap mode on `None` while drawing several paths, then switch to `Selected` or `Live Unwrap` when you want UV feedback.
 - If no preview appears, make sure the hovered vertex is connected to the first vertex on the same mesh object.
