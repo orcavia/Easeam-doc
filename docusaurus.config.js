@@ -36,6 +36,10 @@ const config = {
           routeBasePath: 'operators',
         },
         blog: false,
+        sitemap: {
+          changefreq: 'daily',
+          priority: 0.8,
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
