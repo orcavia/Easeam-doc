@@ -46,11 +46,25 @@
 .navbar-orcavia-link svg {
   width: 19px;
   height: 19px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+}
+
+.navbar-orcavia-link img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+.navbar-version-badge {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  margin-left: 10px;
+  padding: 0 9px;
+  border: 1px solid var(--easeam-line);
+  border-radius: 999px;
+  color: var(--easeam-muted);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .navbar__title {
@@ -190,7 +204,7 @@
 
 .featureCard {
   display: flex;
-  min-height: 156px;
+  min-height: 174px;
   flex-direction: column;
   justify-content: space-between;
   background: var(--easeam-panel);
@@ -233,6 +247,17 @@
   gap: 16px;
 }
 
+.visualNotice {
+  margin: 0 0 28px;
+  padding: 14px 16px;
+  border: 1px solid rgba(243, 163, 94, 0.42);
+  border-left: 4px solid var(--easeam-accent);
+  border-radius: 8px;
+  background: rgba(243, 163, 94, 0.1);
+  color: var(--easeam-muted);
+  line-height: 1.55;
+}
+
 .communityLinkCard {
   display: flex;
   align-items: center;
@@ -264,13 +289,8 @@
 }
 
 .communityLinkIcon svg {
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
+  width: 30px;
+  height: 30px;
 }
 
 .communityLinkCard strong,
@@ -291,6 +311,16 @@
   width: 100%;
   border: 1px solid var(--easeam-line);
   border-radius: 8px;
+}
+
+.footer {
+  padding: 18px 0;
+  border-top: 1px solid var(--easeam-line);
+}
+
+.footer__copyright {
+  color: var(--easeam-muted);
+  font-size: 13px;
 }
 
 @media (max-width: 996px) {

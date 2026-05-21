@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
+import DiscordIcon from '../icons/discord.svg';
+import SuperhiveIcon from '../icons/superhive.svg';
 
 const features = [
   {
@@ -8,6 +10,12 @@ const features = [
     status: 'Documented',
     href: '/operators/modal-operators/mark-around-flat',
     text: 'Mark the boundary around a linked flat area, with hover preview and angle/grow controls.',
+  },
+  {
+    title: 'Draw Path Seam',
+    status: 'Documented',
+    href: '/operators/modal-operators/draw-path-seam',
+    text: 'Draw a seam path across mesh edges with direct viewport feedback and modal controls.',
   },
   {
     title: 'Seam Edge Loop',
@@ -23,37 +31,67 @@ const features = [
   },
   {
     title: 'Mark / Clear Seam',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/actions/mark-clear-seam',
     text: 'Quickly toggle Blender seam state from selected mesh edges.',
   },
   {
     title: 'Re-Unwrap',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/actions/reunwrap',
     text: 'Force re-unwrap the whole mesh using Easeam settings after seam changes.',
   },
   {
     title: 'Tri-Planar Unwrap',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/actions/triplanar-unwrap',
     text: 'Project faces into six directional UV groups, useful for blockout and hard-surface assets.',
   },
   {
+    title: 'Around Flat Selection',
+    status: 'Documented',
+    href: '/operators/non-modal-operators/around-flat-selection',
+    text: 'Mark flat-area boundaries from the current selection without entering the modal workflow.',
+  },
+  {
+    title: 'Limit Loop Selection',
+    status: 'Documented',
+    href: '/operators/non-modal-operators/limit-loop-selection',
+    text: 'Create seam loops from selected edges for quick non-modal loop marking.',
+  },
+  {
+    title: 'Tube Seam Selection',
+    status: 'Documented',
+    href: '/operators/non-modal-operators/tube-seam-selection',
+    text: 'Apply tube seam logic from selected edges when a direct action is faster than a modal pass.',
+  },
+  {
     title: 'Auto Unwrap & Seam',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/non-modal-operators/auto-unwrap-and-seam',
     text: 'Use Smart UV Project, then convert generated UV island borders into seams.',
   },
   {
     title: 'Seam by Sharp Edge',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/non-modal-operators/seam-by-sharp-edge',
     text: 'Turn marked sharp edges or angle-based sharp edges into UV seams.',
   },
   {
+    title: 'Auto Seam By Y Verts',
+    status: 'Documented',
+    href: '/operators/non-modal-operators/auto-seam-by-y-verts',
+    text: 'Detect Y-vertex seam candidates and mark practical split lines for UV preparation.',
+  },
+  {
+    title: 'Seams From UV Islands',
+    status: 'Documented',
+    href: '/operators/non-modal-operators/seam-from-uv-islands',
+    text: 'Convert existing UV island borders back into mesh seams for cleanup or iteration.',
+  },
+  {
     title: 'UV Maps Manager',
-    status: 'Coming soon',
+    status: 'Documented',
     href: '/operators/uv-maps/overview',
     text: 'Manage multiple UV channels across objects with the original Easeam workflow.',
   },
@@ -71,38 +109,18 @@ function FeatureCard({title, text, status, href}) {
   );
 }
 
-function MarketIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M6.6 9.2 7.4 5h9.2l.8 4.2" />
-      <path d="M5 9.2h14l-1.1 10.3H6.1L5 9.2Z" />
-      <path d="M9 12.2V8.1a3 3 0 0 1 6 0v4.1" />
-    </svg>
-  );
-}
-
-function DiscordIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M8.7 17.4c-1.2-.4-2.2-1-3.1-1.8.2-3.7 1.1-6.4 2.8-8.6 1.1-.5 2.2-.8 3.4-.9l.3.7c1.3-.2 2.6-.2 3.9 0l.3-.7c1.2.1 2.3.4 3.4.9 1.7 2.2 2.6 4.9 2.8 8.6-.9.8-1.9 1.4-3.1 1.8l-.7-1.1c.4-.1.8-.3 1.2-.6-2.4 1.1-5.4 1.1-7.8 0 .4.3.8.5 1.2.6l-.6 1.1Z" />
-      <path d="M10.1 13.6c.7 0 1.2-.6 1.2-1.3s-.5-1.3-1.2-1.3-1.2.6-1.2 1.3.5 1.3 1.2 1.3Z" />
-      <path d="M15.9 13.6c.7 0 1.2-.6 1.2-1.3s-.5-1.3-1.2-1.3-1.2.6-1.2 1.3.5 1.3 1.2 1.3Z" />
-    </svg>
-  );
-}
-
 const communityLinks = [
   {
     title: 'Superhive',
     label: 'Superhive, formerly Blender Market',
     href: 'https://superhivemarket.com/products/easeam',
-    icon: <MarketIcon />,
+    icon: SuperhiveIcon,
   },
   {
     title: 'Discord',
     label: 'Join our Discord',
     href: 'https://discord.gg/MznXAXeYQN',
-    icon: <DiscordIcon />,
+    icon: DiscordIcon,
   },
 ];
 
@@ -174,11 +192,16 @@ export default function Home() {
 
         <section id="community-links" className="sectionBand">
           <div className="container">
+            <p className="visualNotice">
+              Visuals may differ between Blender and Easeam versions, but the function and usage flow remain the same.
+            </p>
             <h2>Get Easeam & Support</h2>
             <div className="communityLinkGrid">
               {communityLinks.map((item) => (
                 <a key={item.title} className="communityLinkCard" href={item.href}>
-                  <span className="communityLinkIcon">{item.icon}</span>
+                  <span className="communityLinkIcon">
+                    <item.icon className="assetIcon" aria-hidden="true" />
+                  </span>
                   <span>
                     <strong>{item.title}</strong>
                     <small>{item.label}</small>

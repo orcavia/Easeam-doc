@@ -16,6 +16,7 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 import Link from '@docusaurus/Link';
+import OrcaviaIcon from '../../../icons/orcavia.svg';
 
 import styles from './styles.module.css';
 
@@ -50,13 +51,13 @@ function DocsHomeLink() {
       className="navbar-orcavia-link"
       to="/"
       aria-label="Documentation home">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M3 10.8 12 3l9 7.8" />
-        <path d="M5.5 9.2V21h13V9.2" />
-        <path d="M9.5 21v-6h5v6" />
-      </svg>
+      <OrcaviaIcon aria-hidden="true" />
     </Link>
   );
+}
+
+function VersionBadge() {
+  return <span className="navbar-version-badge">v2.0.0</span>;
 }
 
 function NavbarContentLayout({left, right}) {
@@ -93,6 +94,7 @@ export default function NavbarContent() {
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
           <NavbarItems items={leftItems} />
+          <VersionBadge />
         </>
       }
       right={

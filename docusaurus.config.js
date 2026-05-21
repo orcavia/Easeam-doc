@@ -72,8 +72,8 @@ const config = {
           label: 'Operators',
         },
         {
-          href: 'https://blendermarket.com/products/easeam',
-          label: 'Blender Market',
+          href: 'https://superhivemarket.com/products/easeam',
+          label: 'Superhive',
           position: 'right',
         },
         {
@@ -85,17 +85,7 @@ const config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Join our Discord',
-              href: 'https://discord.gg/MznXAXeYQN',
-            },
-          ],
-        },
-      ],
+      links: [],
       copyright: `Copyright ${new Date().getFullYear()} Orcavia. Easeam is GPL-2.0-or-later.`,
     },
     prism: {
