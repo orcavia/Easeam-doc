@@ -42,8 +42,6 @@ Existing seams act as hard limits. The preview follows the edge loop only throug
 - `View3D > Sidebar > Easeam > UV Tools > Seam Edge Loop`
 - `View3D > Mesh Edit Mode > Alt + S > Seam Edge Loop`
 
-There is also a non-modal version: [Limit Loop (Selection)](/operators/non-modal-operators/limit-loop-selection).
-
 <div className="relatedOperatorCard">
   <a href="/Easeam-doc/operators/non-modal-operators/limit-loop-selection">
     <strong>Limit Loop (Selection)</strong>
@@ -79,10 +77,6 @@ The operator follows Blender's edge-loop selection behavior, so it works best on
 | Left click, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue the tool. |
 | Hold `Ctrl` while applying | Use Live Unwrap for that apply when the Easeam preference is enabled. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
-
-## Unwrap behavior
-
-Seam Edge Loop uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.
 
 ## Tips
 

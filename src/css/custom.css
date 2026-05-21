@@ -363,6 +363,17 @@
   text-decoration: none;
 }
 
+.relatedOperatorCard a,
+.relatedOperatorCard a:hover,
+.relatedOperatorCard a:focus,
+.relatedOperatorCard a:active,
+.relatedOperatorCard a *,
+.relatedOperatorCard a:hover *,
+.relatedOperatorCard a:focus *,
+.relatedOperatorCard a:active * {
+  text-decoration: none !important;
+}
+
 .relatedOperatorCard span {
   color: var(--easeam-muted);
 }
