@@ -97,14 +97,13 @@ const features = [
   },
 ];
 
-function FeatureCard({title, text, status, href}) {
+function FeatureCard({title, text, href}) {
   return (
     <Link className="featureCard" to={href}>
       <span>
         <h3>{title}</h3>
         <p>{text}</p>
       </span>
-      <span className="featureBadge">{status}</span>
     </Link>
   );
 }
@@ -179,22 +178,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="sectionBand">
+        <section className="sectionBand" id="features">
           <div className="container">
-            <h2 id="features">Feature Map</h2>
+            <h2>Feature Map</h2>
             <div className="featureGrid">
               {features.map((feature) => (
                 <FeatureCard key={feature.title} {...feature} />
               ))}
             </div>
-          </div>
-        </section>
-
-        <section id="community-links" className="sectionBand">
-          <div className="container">
             <p className="visualNotice">
               Visuals may differ between Blender and Easeam versions, but the function and usage flow remain the same.
             </p>
+          </div>
+        </section>
+
+        <section id="community-links" className="sectionBand sectionBand--support">
+          <div className="container">
             <h2>Get Easeam & Support</h2>
             <div className="communityLinkGrid">
               {communityLinks.map((item) => (

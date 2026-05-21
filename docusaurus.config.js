@@ -66,8 +66,7 @@ const config = {
       title: '',
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'operatorsSidebar',
+          to: '/',
           position: 'left',
           label: 'Operators',
         },
@@ -85,7 +84,12 @@ const config = {
     },
     footer: {
       style: 'dark',
-      links: [],
+      links: [
+        {
+          label: 'Join Discord',
+          href: 'https://discord.gg/MznXAXeYQN',
+        },
+      ],
       copyright: `Copyright ${new Date().getFullYear()} Orcavia. Easeam is GPL-2.0-or-later.`,
     },
     prism: {

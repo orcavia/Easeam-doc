@@ -16,7 +16,6 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 import Link from '@docusaurus/Link';
-import OrcaviaIcon from '../../../icons/orcavia.svg';
 
 import styles from './styles.module.css';
 
@@ -38,10 +37,35 @@ ${JSON.stringify(item, null, 2)}`,
               {cause: error},
             )
           }>
-          <NavbarItem {...item} />
+          {item.label === 'Operators' ? (
+            <OperatorsLink />
+          ) : (
+            <NavbarItem {...item} />
+          )}
         </ErrorCauseBoundary>
       ))}
     </>
+  );
+}
+
+function OperatorsLink() {
+  function handleClick(event) {
+    const featureMap = document.getElementById('features');
+
+    if (featureMap) {
+      event.preventDefault();
+      featureMap.scrollIntoView({behavior: 'smooth', block: 'start'});
+      return;
+    }
+
+    event.preventDefault();
+    window.location.href = `${window.location.origin}/Easeam-doc/#features`;
+  }
+
+  return (
+    <Link className="navbar__item navbar__link" to="/" onClick={handleClick}>
+      Operators
+    </Link>
   );
 }
 
@@ -51,7 +75,11 @@ function DocsHomeLink() {
       className="navbar-orcavia-link"
       to="/"
       aria-label="Documentation home">
-      <OrcaviaIcon aria-hidden="true" />
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M3 10.8 12 3l9 7.8" />
+        <path d="M5.5 9.2V21h13V9.2" />
+        <path d="M9.5 21v-6h5v6" />
+      </svg>
     </Link>
   );
 }
