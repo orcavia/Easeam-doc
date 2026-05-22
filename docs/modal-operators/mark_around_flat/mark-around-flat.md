@@ -51,10 +51,16 @@ Existing seams act as hard boundaries. The preview can expand across the availab
 - `View3D > Sidebar > Easeam > UV Tools > Mark Around Flat`
 - `View3D > Mesh Edit Mode > Alt + S > Mark Around Flat`
 
-There is also a non-modal version: [Around Flat (Selection)](/operators/non-modal-operators/around-flat-selection).
+<p className="relatedOperatorLabel">
+  <strong>Non-Modal Version:</strong>
+</p>
 
-- `View3D > Sidebar > Easeam > Non-Modal Tools > Around Flat (Selection)`
-- `View3D > Mesh Edit Mode > Alt + S > Non-Modal Tools > Around Flat (Selection)`
+<div className="relatedOperatorCard">
+  <a href="/Easeam-doc/operators/non-modal-operators/around-flat-selection">
+    <strong>Around Flat (Selection)</strong>
+    <span>Use the non-modal operator when seed faces are already selected and you want a direct one-shot flat-region seam.</span>
+  </a>
+</div>
 
 ## Best use cases
 
@@ -76,9 +82,9 @@ Use it on flat or nearly flat parts of a mesh where you want an island boundary 
 | `Shift` + scroll wheel | Increase or decrease Grow. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
-## Settings
-
-Mark Around Flat uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.
+<p className="operatorNote">
+  <strong>Mark Around Flat uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.</strong>
+</p>
 
 ## Tips
 

@@ -42,6 +42,10 @@ Existing seams act as hard limits. The preview follows the edge loop only throug
 - `View3D > Sidebar > Easeam > UV Tools > Seam Edge Loop`
 - `View3D > Mesh Edit Mode > Alt + S > Seam Edge Loop`
 
+<p className="relatedOperatorLabel">
+  <strong>Non-Modal Version:</strong>
+</p>
+
 <div className="relatedOperatorCard">
   <a href="/Easeam-doc/operators/non-modal-operators/limit-loop-selection">
     <strong>Limit Loop (Selection)</strong>

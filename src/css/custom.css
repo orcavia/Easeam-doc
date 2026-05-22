@@ -344,6 +344,16 @@
   margin: 18px 0 28px;
 }
 
+.relatedOperatorLabel {
+  margin: 28px 0 4px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.relatedOperatorLabel + .relatedOperatorCard {
+  margin-top: 0;
+}
+
 .relatedOperatorCard a {
   display: flex;
   flex-direction: column;
@@ -376,6 +386,11 @@
 
 .relatedOperatorCard span {
   color: var(--easeam-muted);
+}
+
+.operatorNote {
+  font-size: 18px;
+  line-height: 1.45;
 }
 
 .footer {
