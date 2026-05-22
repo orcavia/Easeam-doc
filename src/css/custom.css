@@ -253,7 +253,7 @@
 }
 
 .visualNotice {
-  margin: 36px 0 0;
+  margin: 94px 0 0 !important;
   padding: 14px 16px;
   border: 1px solid rgba(243, 163, 94, 0.42);
   border-left: 4px solid var(--easeam-accent);
