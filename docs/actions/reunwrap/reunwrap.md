@@ -16,7 +16,7 @@ Re-Unwrap is the refresh button for UVs after your seam layout changes. It runs 
 
 ## What it does
 
-- Re-unwraps the selected mesh objects using the current Easeam unwrap settings.
+- Re-unwraps the current editing mesh object.
 - Can unwrap the whole mesh or only the current selection.
 - Can reveal and include hidden geometry during the unwrap pass.
 - Can unwrap each material as a separate pass.
@@ -35,11 +35,12 @@ Use Re-Unwrap when the seams are already placed and you want the UV layout regen
 
 - refreshing UVs after adding, removing, or moving seams
 - testing a different unwrap method or margin setting
-- updating selected UV islands while leaving the rest of the mesh alone
 - reprocessing all selected objects in one pass
 - separating unwrap passes by material before packing
 
-Re-Unwrap uses Blender's unwrap operator under the hood, so unapplied object scale can affect proportions. Apply scale first when accurate UV proportions matter.
+:::warning
+Re-Unwrap uses Blender's unwrap operator under the hood. Apply object scale first when accurate UV proportions matter. Dense models without a proper seam layout can unwrap slowly because Blender has to solve a larger, less constrained UV problem.
+:::
 
 ## Workflow
 
@@ -62,6 +63,8 @@ Use this when material regions should stay grouped during unwrap instead of bein
 ### Auto Pack
 
 Packs UV islands after the unwrap pass using Easeam's configured margin. This is slower than a plain unwrap, but it gives a cleaner final layout when you want an immediate packed result.
+
+Default: off
 
 ### Keep Pinned
 
@@ -86,15 +89,21 @@ Re-Unwrap uses the shared Easeam unwrap settings shown in its redo panel:
 | Setting | Behavior |
 | --- | --- |
 | `Method` | Chooses Blender's unwrap method, such as Angle Based or Conformal. |
+| `Iterations` | Sets solver iterations when `Method` is `Minimum Stretch`. |
 | `Fill Holes` | Virtually fills holes before unwrapping, which can help avoid overlaps and preserve symmetry. |
 | `Correct Aspect` | Uses image aspect ratio when calculating UVs. |
+| `Use Subdivision Surface` | Uses positions from the evaluated subdivision surface modifier when calculating UVs. |
 | `Margin Method` | Controls how Blender interprets the unwrap margin. |
 | `Margin` | Sets spacing between UV islands during unwrap and packing. |
+| `No Flip` | Prevents UV flips, which can reduce distortion when pins are involved. |
+| `Use Weights` | Enables vertex group weights for weighted parameterization. |
+| `Weight Group` | Selects the vertex group used when `Use Weights` is enabled. |
+| `Weight Factor` | Controls how strongly the weight group influences the unwrap. |
 
 ## Tips
 
 - Use `Only Selected` for targeted fixes after editing a small part of the seam layout.
 - Leave `Include Hidden` enabled when hidden faces should stay consistent with the visible UV layout.
 - Use `Each Material` when material boundaries are meaningful UV groups.
-- Enable `Auto Pack` near the end of the workflow; keep it off while rapidly testing seam changes.
+- Keep `Auto Pack` disabled while testing seam changes to speed up Re-Unwrap; enable it only for the final packed result.
 - Pin important UV islands before packing, then keep `Keep Pinned` enabled.
