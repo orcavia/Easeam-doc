@@ -82,6 +82,10 @@ The operator follows Blender's edge-loop selection behavior, so it works best on
 | Hold `Ctrl` while applying | Use Live Unwrap for that apply when the Easeam preference is enabled. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
+<p className="operatorNote">
+  <strong>Seam Edge Loop uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.</strong>
+</p>
+
 ## Tips
 
 - Use this on clean loops where Blender can infer the edge-loop path from topology.

@@ -407,6 +407,8 @@
 
 .footer__links {
   display: flex;
+  flex: 0 0 auto;
+  align-items: center;
   justify-content: center;
   margin: 0;
   text-align: center;
@@ -448,12 +450,19 @@
 }
 
 .footer__bottom {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
   margin-top: 0;
 }
 
 .footer__copyright {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
   color: var(--easeam-muted);
   font-size: 13px;
+  line-height: 1.2;
 }
 
 @media (max-width: 996px) {
