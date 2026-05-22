@@ -28,7 +28,6 @@ Seams From UV Islands converts the borders of the active UV map's islands back i
 
 - `View3D > Sidebar > Easeam > Non-Modal Tools > Seams From UV Islands`
 - `View3D > Mesh Edit Mode > Alt + S > Non-Modal Tools > Seams From UV Islands`
-- Operator id: `mesh.seams_from_uv_islands`
 
 ## Best use cases
 

@@ -28,7 +28,6 @@ Re-Unwrap is the refresh button for UVs after your seam layout changes. It runs 
 
 - `View3D > Sidebar > Easeam > UV Tools > Re-Unwrap`
 - `View3D > Mesh Edit Mode > Alt + S > Re-Unwrap`
-- Operator id: `mesh.reunwrap`
 
 ## Best use cases
 

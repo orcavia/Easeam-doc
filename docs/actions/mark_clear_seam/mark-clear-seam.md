@@ -21,69 +21,32 @@ Mark / Clear Seam is just Blender's regular mark and clear seam workflow, with a
 - Can toggle selected edges, clearing edges that are already seams while marking the rest.
 - Can clear every visible seam in the mesh.
 - Can unwrap the selected seam island or use Blender Live Unwrap after marking.
-- Restores the original selected edges after the mark operation.
 
 ## Where to find it
 
 - `View3D > Sidebar > Easeam > UV Tools > Mark / Clear Seam`
 - `View3D > Mesh Edit Mode > Alt + S > Mark / Clear Seam`
-- Operator id: `mesh.easeamseam`
 
 ## Best use cases
 
 Use Mark / Clear Seam for direct manual seam editing:
 
-- marking selected edges as UV cuts
-- removing seam flags from a selected edge group
+- general seam marking and clearing
 - quickly flipping a mixed seam selection with Toggle Mode
-- clearing visible seams before rebuilding a layout
-- testing a seam change with immediate unwrap feedback
+- clearing all visible seams
 
-## Workflow
+## Redo panel options
 
-1. Select a mesh object and enter Edit Mode.
-2. Select the edges you want to mark or clear.
-3. Run `Mark / Clear Seam`.
-4. Choose `Mark` or `Clear` in the operator options.
-5. Enable any additional options you need.
+| Item | When shown | Behavior |
+| --- | --- | --- |
+| `Toggle Mode` | When `Action` is set to `Mark` | Swaps seam marks on the selected edges: selected edges that are already seams are cleared, and selected edges that are not seams are marked. |
+| `All Visible` | When `Action` is set to `Clear` | Clears seams from all visible mesh elements, then deselects the mesh. Leave this off when you only want to clear the current selection. |
 
-## Settings
-
-### Action
-
-Chooses whether the operator marks seams or clears seams.
-
-| Action | Behavior |
-| --- | --- |
-| `Mark` | Marks the selected edges as seams. |
-| `Clear` | Clears seams from the selected edges. |
-
-### Toggle Mode
-
-Available when `Action` is set to `Mark`.
-
-Toggles the selected edges instead of only marking them. Selected edges that are already seams are cleared, and selected edges that are not seams are marked.
-
-### All Visible
-
-Available when `Action` is set to `Clear`.
-
-Clears seams from all visible mesh elements, then deselects the mesh. Leave this off when you only want to clear the current selection.
-
-### Unwrap Mode
-
-Controls what happens after seams are marked.
-
-| Mode | Behavior |
-| --- | --- |
-| `None` | Only marks seams. |
-| `Selected` | Marks seams, selects the linked area delimited by seams, then unwraps it. |
-| `Live Unwrap` | Enables Blender Live Unwrap while the seam operation runs. |
-
-If the mesh is above the configured max face count, Easeam disables automatic unwrap for performance unless `Force Unwrap` is enabled.
+<p className="operatorNote">
+  <strong>Mark / Clear Seam uses the shared [Unwrap mode](/operators/shared/unwrap-mode/) setting.</strong>
+</p>
 
 ## Tips
 
-- Use `Toggle Mode` when a selection contains both seam and non-seam edges.
-- Use `All Visible` as a quick reset before placing a new seam layout.
-- Keep `Unwrap Mode` on `None` while doing several manual seam edits, then switch to `Selected` or `Live Unwrap` when you want UV feedback.
+- Use `Toggle Mode` when a selection contains both seam and non-seam edges to swap seam marks.
+- Use `All Visible` to quickly clear seams on visible geometry.

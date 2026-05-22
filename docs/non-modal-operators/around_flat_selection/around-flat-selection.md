@@ -29,7 +29,6 @@ Around Flat (Selection) is the one-shot version of Mark Around Flat. Select one 
 
 - `View3D > Sidebar > Easeam > Non-Modal Tools > Around Flat (Selection)`
 - `View3D > Mesh Edit Mode > Alt + S > Non-Modal Tools > Around Flat (Selection)`
-- Operator id: `mesh.boundaryseam_nm`
 
 ## Best use cases
 

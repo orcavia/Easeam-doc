@@ -28,7 +28,6 @@ Limit Loop (Selection) is the one-shot version of Seam Edge Loop. Select one or 
 
 - `View3D > Sidebar > Easeam > Non-Modal Tools > Limit Loop (Selection)`
 - `View3D > Mesh Edit Mode > Alt + S > Non-Modal Tools > Limit Loop (Selection)`
-- Operator id: `mesh.limitloop_nm`
 
 ## Best use cases
 
