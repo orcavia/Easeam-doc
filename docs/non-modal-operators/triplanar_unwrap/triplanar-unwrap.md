@@ -23,7 +23,6 @@ Tri-Planar Unwrap is a fast projection-based UV setup for hard-surface objects, 
 - Can limit the operation to selected faces.
 - Can mark seams where projection groups meet.
 - Can pack the resulting UV islands after projection.
-- Works on all editable mesh objects in the current Edit Mode session.
 
 ## Selected faces
 
@@ -74,19 +73,8 @@ Default: off
 
 This uses Easeam's configured unwrap margin and Blender's axis-aligned packing. Leave it off when you want to inspect the six directional groups exactly as projected.
 
-## Workflow
-
-1. Select one or more mesh objects.
-2. Enter Edit Mode.
-3. Select the faces you want to process, or turn off `Only Selected` for all visible faces.
-4. Run `Tri-Planar Unwrap`.
-5. Tune `Only Selected`, `Add Seam`, and `Auto Pack` in the redo panel.
-
-If no visible faces are available for the chosen mode, the operator cancels and reports `No faces available for tri-planar unwrap`.
-
 ## Tips
 
-- Apply object scale first when you need predictable texel density.
 - Use `Only Selected` for localized UV updates on a larger mesh.
 - Keep `Add Seam` enabled if you want later unwrap operations to respect the tri-planar regions.
 - Keep `Auto Pack` disabled while checking the directional layout, then enable it when you need a packed final result.

@@ -20,7 +20,6 @@ const sidebars = {
       items: [
         'actions/mark_clear_seam/mark-clear-seam',
         'actions/reunwrap/reunwrap',
-        'actions/triplanar_unwrap/triplanar-unwrap',
       ],
     },
     {
@@ -31,6 +30,7 @@ const sidebars = {
         'non-modal-operators/around_flat_selection/around-flat-selection',
         'non-modal-operators/limit_loop_selection/limit-loop-selection',
         'non-modal-operators/tube_seam_selection/tube-seam-selection',
+        'non-modal-operators/triplanar_unwrap/triplanar-unwrap',
         'non-modal-operators/auto_unwrap_and_seam/auto-unwrap-and-seam',
         'non-modal-operators/seam_by_sharp_edge/seam-by-sharp-edge',
         'non-modal-operators/auto_seam_by_y_verts/auto-seam-by-y-verts',
