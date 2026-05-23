@@ -16,20 +16,18 @@ Auto Seam By Y Verts finds Y-shaped junctions, selects the edge loops that grow 
 
 ## What it does
 
-- Searches visible mesh vertices that have exactly three visible connected edges.
 - Checks whether the three edge directions form a balanced Y shape.
 - Uses the Angle Threshold setting as tolerance around 120 degree branch angles.
 - Selects the three candidate edges around each matching vertex.
 - Expands those seed edges with Blender's edge-loop selection.
 - Marks the final selected loop edges as seams.
-- Leaves the newly marked seam edges selected.
 - Supports multi-object edit sessions.
 
 ## Selected geometry
 
 Enable `Only Selected` when you want to search around a specific part of the mesh instead of the whole visible edit mesh. The operator collects selected vertices, selected edge endpoints, and selected face vertices, then also includes their directly connected neighbor vertices in the search area.
 
-<img className="operatorGif" src={useBaseUrl('/img/non_modal_operators/auto_seam_by_y_verts/auto_seam_by_y_verts_selected.gif')} alt="Auto Seam By Y Verts using selected mesh geometry to limit Y junction seam detection in Blender" />
+<img className="operatorGif" src={useBaseUrl('/img/non_modal_operators/auto_seam_by_y_verts/auto_seam_by_y_verts_selected.gif')} alt="Auto Seam By Y Verts using selected mesh geometry to limit Y junction seam detection in Blender" style={{width: '70%'}} />
 
 This makes it possible to select a local region near a branch and mark only the loops connected to Y-shaped vertices in that area.
 
@@ -42,23 +40,10 @@ This makes it possible to select a local region near a branch and mark only the 
 
 Use it when topology contains repeated three-way junctions that should become seam loops:
 
-- branching hard-surface details
-- Y-shaped panel intersections
-- stylized pipes, tubes, or support structures
-- mirrored or repeated junction topology
-- localized seam setup from a selected region
+- a clear Y-shaped geometry flow
+- beveled geometry with even segments
 
 The result depends on topology. Vertices with fewer or more than three visible connected edges are ignored, and hidden geometry is skipped.
-
-## Workflow
-
-1. Select a mesh object and enter Edit Mode.
-2. Optionally select geometry near the junctions you want to process.
-3. Run `Auto Seam By Y Verts`.
-4. Adjust `Angle Threshold` and `Only Selected` in the operator panel or redo panel.
-5. Confirm the operation.
-
-If `Only Selected` is enabled and no visible geometry is selected, the operator cancels and reports `Select some geometry`.
 
 ## Settings
 
@@ -89,4 +74,3 @@ After the loop selection is found, the operator marks those edges as seams and r
 - Start with the default threshold, then lower it if too many nearby three-edge vertices are detected.
 - Use `Only Selected` for dense meshes where only one branch area should be processed.
 - Hide geometry you want the operator to ignore during detection.
-- Inspect the selected seam loops after running the operator; the same selected edges are the edges that were marked as seams.
