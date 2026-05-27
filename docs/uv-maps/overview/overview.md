@@ -19,5 +19,3 @@ slug: /uv-maps/overview
 </div>
 
 UV Maps Manager makes it easy to manage multiple UV channels across objects. It keeps the original Easeam workflow for adding, deleting, renaming, pruning, comparing, activating, and fixing UV channels across selected mesh objects.
-
-Asset folder: `docs/uv-maps/overview/`
