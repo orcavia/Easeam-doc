@@ -6,28 +6,28 @@ import SuperhiveIcon from '../icons/superhive.svg';
 
 const features = [
   {
-    title: 'Mark Around Flat',
-    status: 'Documented',
-    href: '/operators/modal-operators/mark-around-flat',
-    text: 'Mark the boundary around a linked flat area, with hover preview and angle/grow controls.',
-  },
-  {
-    title: 'Draw Path Seam',
-    status: 'Documented',
-    href: '/operators/modal-operators/draw-path-seam',
-    text: 'Draw a seam path across mesh edges with direct viewport feedback and modal controls.',
-  },
-  {
     title: 'Seam Edge Loop',
     status: 'Documented',
     href: '/operators/modal-operators/seam-edge-loop',
     text: 'Hover an edge, preview the loop, and mark a seam without crossing existing seam borders.',
   },
   {
+    title: 'Mark Around Flat',
+    status: 'Documented',
+    href: '/operators/modal-operators/mark-around-flat',
+    text: 'Mark the boundary around a linked flat area, with hover preview and angle/grow controls.',
+  },
+  {
     title: 'Tube Seam',
     status: 'Documented',
     href: '/operators/modal-operators/tube-seam',
     text: 'Create cylindrical seam cuts from a seed edge, including grow and auto-grow workflows.',
+  },
+  {
+    title: 'Draw Path Seam',
+    status: 'Documented',
+    href: '/operators/modal-operators/draw-path-seam',
+    text: 'Draw a seam path across mesh edges with direct viewport feedback and modal controls.',
   },
   {
     title: 'Mark / Clear Seam',
@@ -40,12 +40,6 @@ const features = [
     status: 'Documented',
     href: '/operators/actions/reunwrap',
     text: 'Force re-unwrap the whole mesh using Easeam settings after seam changes.',
-  },
-  {
-    title: 'Tri-Planar Unwrap',
-    status: 'Documented',
-    href: '/operators/actions/triplanar-unwrap',
-    text: 'Project faces into six directional UV groups, useful for blockout and hard-surface assets.',
   },
   {
     title: 'Around Flat Selection',
@@ -64,6 +58,12 @@ const features = [
     status: 'Documented',
     href: '/operators/non-modal-operators/tube-seam-selection',
     text: 'Apply tube seam logic from selected edges when a direct action is faster than a modal pass.',
+  },
+  {
+    title: 'Tri-Planar Unwrap',
+    status: 'Documented',
+    href: '/operators/actions/triplanar-unwrap',
+    text: 'Project faces into six directional UV groups, useful for blockout and hard-surface assets.',
   },
   {
     title: 'Auto Unwrap & Seam',
