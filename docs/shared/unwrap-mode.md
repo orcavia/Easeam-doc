@@ -26,4 +26,8 @@ Modal tools can use `Ctrl` while applying to temporarily request Live Unwrap. If
 
 ## Modal Exit Re-Unwrap
 
-If `Modal Re-Unwrap On Exit` is enabled in Easeam preferences, leaving a modal tool runs a final re-unwrap after the session ends.
+If `Re-Unwrap On Exit` is enabled, Operator will re-unwrap all visible geometry once on exit, even if the modal tool is cancelled.
+
+:::tip
+If unwrapping is not working, even when using Blender's built-in unwrap tools, try remove the affected UV channel and add it again.
+:::
