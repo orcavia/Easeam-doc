@@ -75,7 +75,7 @@ const config = {
           label: 'Operators',
         },
         {
-          href: 'https://superhivemarket.com/products/easeam',
+          href: 'https://superhivemarket.com/products/easeam-2',
           label: 'Superhive',
           position: 'right',
         },

@@ -112,7 +112,7 @@ const communityLinks = [
   {
     title: 'Superhive',
     label: 'Superhive, formerly Blender Market',
-    href: 'https://superhivemarket.com/products/easeam',
+    href: 'https://superhivemarket.com/products/easeam-2',
     icon: SuperhiveIcon,
   },
   {
@@ -153,7 +153,7 @@ export default function Home() {
               <div className="heroActions">
                 <a
                   className="button button--product button--lg"
-                  href="https://superhivemarket.com/products/easeam"
+                  href="https://superhivemarket.com/products/easeam-2"
                   target="_blank"
                   rel="noopener noreferrer">
                   Get Easeam
