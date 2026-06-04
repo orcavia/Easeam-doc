@@ -143,7 +143,7 @@ export default function Home() {
             <div>
               <h1 className="heroTitle">Easeam 2</h1>
               <p className="developmentNotice">
-                Documentation in development. Easeam 2 has not been released yet.
+                Easeam 2 is now available on Superhive. Documentation is still being expanded.
               </p>
               <p className="heroLead">
                 A focused Blender UV toolkit with multiple methods to speed up seam and UV
@@ -156,7 +156,7 @@ export default function Home() {
                   href="https://superhivemarket.com/products/easeam-2"
                   target="_blank"
                   rel="noopener noreferrer">
-                  Get Easeam
+                  Get Easeam 2
                   <ExternalLinkIcon />
                 </a>
               </div>

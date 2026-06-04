@@ -61,7 +61,7 @@ const config = {
     },
     announcementBar: {
       id: 'development-status',
-      content: 'This documentation is still in development. Easeam 2 has not been released yet.',
+      content: 'Easeam 2 is now available on Superhive. Documentation is still being expanded.',
       backgroundColor: '#f3a35e',
       textColor: '#1d160f',
       isCloseable: false,
