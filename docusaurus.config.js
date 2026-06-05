@@ -2,7 +2,7 @@
 
 const config = {
   title: 'Easeam 2',
-  tagline: 'Faster seam marking and UV prep for Blender artists.',
+  tagline: 'Blender UV seam marking, unwrap tools, and UV map management documentation.',
   favicon: 'img/favicon.svg',
   future: {
     v4: true,
@@ -50,6 +50,26 @@ const config = {
   themeConfig: {
     image: 'img/easeam-discord-embed.png',
     metadata: [
+      {
+        name: 'description',
+        content:
+          'Easeam 2 documentation for Blender UV seam marking, unwrap workflows, UV island cleanup, and UV map management.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Easeam 2, Blender add-on, Blender addon, UV seam, UV seam marking, Blender unwrap, UV unwrap, UV mapping, UV map management, UV islands',
+      },
+      {property: 'og:type', content: 'website'},
+      {
+        property: 'og:title',
+        content: 'Easeam 2 Blender UV Seam & Unwrap Documentation',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Documentation for Easeam 2, a Blender add-on for UV seam marking, unwrap workflows, UV island cleanup, and UV map management.',
+      },
       {property: 'og:image:type', content: 'image/png'},
       {property: 'og:image:width', content: '1200'},
       {property: 'og:image:height', content: '630'},

@@ -1,27 +1,71 @@
 import React from 'react';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import DiscordIcon from '../icons/discord.svg';
 import SuperhiveIcon from '../icons/superhive.svg';
+
+const seoKeywords = [
+  'Easeam 2',
+  'Blender add-on',
+  'Blender addon',
+  'UV seam marking',
+  'Blender unwrap',
+  'UV unwrap',
+  'UV mapping',
+  'UV map management',
+  'UV island cleanup',
+  'seam tools',
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Easeam 2 Blender UV Seam & Unwrap Documentation',
+  description:
+    'Documentation for Easeam 2, a Blender add-on for UV seam marking, unwrap workflows, UV island cleanup, and UV map management.',
+  url: 'https://orcavia.dev/Easeam-doc/',
+  about: [
+    'Blender add-on',
+    'UV seam marking',
+    'UV unwrap workflow',
+    'UV map management',
+    'UV island cleanup',
+  ],
+  publisher: {
+    '@type': 'Organization',
+    name: 'Orcavia',
+    url: 'https://orcavia.dev/',
+  },
+};
+
+const topicChips = [
+  'Blender add-on',
+  'UV seam marking',
+  'Unwrap workflow',
+  'UV map management',
+  'UV island cleanup',
+  'Modal seam tools',
+];
 
 const features = [
   {
     title: 'Seam Edge Loop',
     status: 'Documented',
     href: '/operators/modal-operators/seam-edge-loop',
-    text: 'Hover an edge, preview the loop, and mark a seam without crossing existing seam borders.',
+    text: 'Mark Blender UV seam loops from a hovered edge without crossing existing seam borders.',
   },
   {
     title: 'Mark Around Flat',
     status: 'Documented',
     href: '/operators/modal-operators/mark-around-flat',
-    text: 'Mark the boundary around a linked flat area, with hover preview and angle/grow controls.',
+    text: 'Create UV seams around linked flat regions with hover preview and angle/grow controls.',
   },
   {
     title: 'Tube Seam',
     status: 'Documented',
     href: '/operators/modal-operators/tube-seam',
-    text: 'Create cylindrical seam cuts from a seed edge, including grow and auto-grow workflows.',
+    text: 'Create cylindrical seam cuts for tube-like meshes, including grow and auto-grow workflows.',
   },
   {
     title: 'Draw Path Seam',
@@ -33,7 +77,7 @@ const features = [
     title: 'Mark / Clear Seam',
     status: 'Documented',
     href: '/operators/actions/mark-clear-seam',
-    text: 'Quickly toggle Blender seam state from selected mesh edges.',
+    text: 'Quickly toggle Blender UV seam state from selected mesh edges.',
   },
   {
     title: 'Re-Unwrap',
@@ -69,7 +113,7 @@ const features = [
     title: 'Auto Unwrap & Seam',
     status: 'Documented',
     href: '/operators/non-modal-operators/auto-unwrap-and-seam',
-    text: 'Use Smart UV Project, then convert generated UV island borders into seams.',
+    text: 'Use Smart UV Project, then convert generated UV island borders into Blender seams.',
   },
   {
     title: 'Seam by Sharp Edge',
@@ -93,7 +137,30 @@ const features = [
     title: 'UV Maps Manager',
     status: 'Documented',
     href: '/operators/uv-maps/overview',
-    text: 'Manage multiple UV channels across objects with the original Easeam workflow.',
+    text: 'Manage multiple Blender UV channels across selected objects with the original Easeam workflow.',
+  },
+];
+
+const useCases = [
+  {
+    title: 'Blender UV seam marking addon',
+    href: '/operators/modal-operators/seam-edge-loop',
+    text: 'Start with modal seam tools for edge loops, flat regions, tube cuts, and drawn seam paths.',
+  },
+  {
+    title: 'Fast unwrap workflow',
+    href: '/operators/actions/reunwrap',
+    text: 'Pair seam changes with Re-Unwrap and shared unwrap settings for faster iteration in Blender.',
+  },
+  {
+    title: 'UV island cleanup',
+    href: '/operators/non-modal-operators/seam-from-uv-islands',
+    text: 'Convert UV island borders back into mesh seams when refining existing UV layouts.',
+  },
+  {
+    title: 'UV map management',
+    href: '/operators/uv-maps/overview',
+    text: 'Add, rename, clean, compare, and activate UV channels across selected mesh objects.',
   },
 ];
 
@@ -104,6 +171,15 @@ function FeatureCard({title, text, href}) {
         <h3>{title}</h3>
         <p>{text}</p>
       </span>
+    </Link>
+  );
+}
+
+function UseCaseCard({title, text, href}) {
+  return (
+    <Link className="useCaseCard" to={href}>
+      <h3>{title}</h3>
+      <p>{text}</p>
     </Link>
   );
 }
@@ -135,8 +211,12 @@ function ExternalLinkIcon() {
 export default function Home() {
   return (
     <Layout
-      title="Easeam 2 Documentation"
-      description="Easeam 2 documentation for Blender UV seam marking and unwrap operators">
+      title="Easeam 2 Blender UV Seam & Unwrap Documentation"
+      description="Easeam 2 documentation for Blender UV seam marking, unwrap workflows, UV island cleanup, and UV map management.">
+      <Head>
+        <meta name="keywords" content={seoKeywords.join(', ')} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      </Head>
       <main>
         <section className="heroShell">
           <div className="container heroGrid">
@@ -146,10 +226,18 @@ export default function Home() {
                 Easeam 2 is now available on Superhive. Documentation is still being expanded.
               </p>
               <p className="heroLead">
-                A focused Blender UV toolkit with multiple methods to speed up seam and UV
-                workflows. Use viewport previews, modal marking tools, UV map management,
-                and unwrap actions to handle common prep jobs without breaking your flow.
+                Easeam 2 is a Blender add-on for faster UV seam marking, unwrap workflows,
+                UV island cleanup, and UV map management. Use viewport previews, modal seam
+                tools, and unwrap actions to handle common UV prep jobs without breaking
+                your flow.
               </p>
+              <div className="topicChips" aria-label="Easeam documentation topics">
+                {topicChips.map((topic) => (
+                  <span key={topic} className="topicChip">
+                    {topic}
+                  </span>
+                ))}
+              </div>
               <div className="heroActions">
                 <a
                   className="button button--product button--lg"
@@ -159,19 +247,24 @@ export default function Home() {
                   Get Easeam 2
                   <ExternalLinkIcon />
                 </a>
+                <Link
+                  className="button button--quiet button--lg"
+                  to="/operators/modal-operators/seam-edge-loop">
+                  Read seam marking docs
+                </Link>
               </div>
             </div>
             <aside className="workflowPanel">
               <h2>Built around viewport flow</h2>
               <ul className="workflowList">
                 <li>
-                  <strong>Easy marking seam.</strong> Mark seams directly from the viewport with fast preview and commit controls.
+                  <strong>Blender UV seam marking.</strong> Mark seams directly from the viewport with fast preview and commit controls.
                 </li>
                 <li>
-                  <strong>Modal operator available.</strong> Work interactively with modal tools for Mark Around Flat, Tube Seam, and seam loops.
+                  <strong>Interactive unwrap workflow.</strong> Combine modal tools, selection-based operators, and re-unwrap actions.
                 </li>
                 <li>
-                  <strong>Easy managing UV channel.</strong> Add, rename, clean, and align UV maps across multiple selected objects.
+                  <strong>UV map management.</strong> Add, rename, clean, and align UV channels across multiple selected objects.
                 </li>
               </ul>
             </aside>
@@ -179,9 +272,28 @@ export default function Home() {
         </section>
         <section className="sectionSeparator" aria-hidden="true" />
 
+        <section className="sectionBand sectionBand--seo" id="blender-uv-workflow">
+          <div className="container">
+            <p className="sectionEyebrow">Blender UV workflow docs</p>
+            <h2>Seam marking, unwrap passes, and UV map cleanup in one documentation hub</h2>
+            <p className="sectionLead">
+              These guides cover practical UV preparation in Blender: marking seams, defining
+              UV island borders, re-unwrapping after seam changes, and managing UV maps across
+              selected mesh objects. Use them as the reference path for learning what each
+              Easeam operator does and when to use it.
+            </p>
+            <div className="useCaseGrid">
+              {useCases.map((useCase) => (
+                <UseCaseCard key={useCase.title} {...useCase} />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="sectionBand" id="features">
           <div className="container">
-            <h2>Feature Map</h2>
+            <p className="sectionEyebrow">Operator reference</p>
+            <h2>Easeam 2 Blender UV tools</h2>
             <div className="featureGrid">
               {features.map((feature) => (
                 <FeatureCard key={feature.title} {...feature} />
