@@ -20,9 +20,11 @@ If the mesh is above the configured max face count, Easeam disables automatic un
 
 Keep Unwrap Mode on `None` while exploring seam placement. Switch to `Selected` or `Live Unwrap` when you are ready to update UVs.
 
-## Modal Live Unwrap Shortcut
+## Modal Live Unwrap
 
-Modal tools can use `Ctrl` while applying to temporarily request Live Unwrap. If the Easeam preference is set to make Live Unwrap the default modal behavior, holding `Ctrl` temporarily disables it instead.
+Modal tools have a `Live Unwrap` preference in Modal Settings. It is disabled by default.
+
+Live Unwrap is only evaluated when you apply the preview, not while hovering. When `Live Unwrap` is disabled, hold `Ctrl` while applying to use Live Unwrap for that apply. When `Live Unwrap` is enabled, applying uses Live Unwrap by default and holding `Ctrl` bypasses it.
 
 ## Modal Exit Re-Unwrap
 

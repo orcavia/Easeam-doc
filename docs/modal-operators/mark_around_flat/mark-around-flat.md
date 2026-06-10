@@ -78,6 +78,7 @@ Use it on flat or nearly flat parts of a mesh where you want an island boundary 
 | --- | --- |
 | Hover face | Preview the flat region and boundary seam. |
 | Left click, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue the tool. |
+| Hold `Ctrl` while applying | Use Live Unwrap when the modal `Live Unwrap` preference is disabled, or bypass it when the preference is enabled. |
 | Hold `Shift` + move mouse left/right | Adjust the flatness angle. |
 | `Shift` + scroll wheel | Increase or decrease Grow. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |

@@ -73,6 +73,7 @@ The operator expects clean topology. It works best when the tube is quad-based a
 | --- | --- |
 | Hover edge | Preview the tube seam cut. |
 | Left click, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue the tool. |
+| Hold `Ctrl` while applying | Use Live Unwrap when the modal `Live Unwrap` preference is disabled, or bypass it when the preference is enabled. |
 | `A` | Toggle Auto Grow. |
 | `Shift` + scroll wheel | Increase or decrease manual Grow. |
 | Hold `Shift` + move mouse left/right | Adjust Auto Grow angle. |

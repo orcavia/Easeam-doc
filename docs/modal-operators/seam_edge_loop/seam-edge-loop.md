@@ -79,7 +79,7 @@ The operator follows Blender's edge-loop selection behavior, so it works best on
 | --- | --- |
 | Hover edge | Preview the seam loop. |
 | Left click, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue the tool. |
-| Hold `Ctrl` while applying | Use Live Unwrap for that apply when the Easeam preference is enabled. |
+| Hold `Ctrl` while applying | Use Live Unwrap when the modal `Live Unwrap` preference is disabled, or bypass it when the preference is enabled. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
 <p className="operatorNote">

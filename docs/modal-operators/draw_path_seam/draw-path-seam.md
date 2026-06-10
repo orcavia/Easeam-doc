@@ -67,7 +67,7 @@ The path follows mesh edges and uses edge length to choose the shortest availabl
 | Hover vertex after first vertex is set | Preview the shortest seam path. |
 | Left click with a preview, `Enter`, `Numpad Enter`, `Space` | Apply the current preview and continue from the target vertex. |
 | `A` | Clear the current first vertex so you can start a new path. |
-| Hold `Ctrl` while applying | Use Live Unwrap for that apply when the Easeam preference is enabled. |
+| Hold `Ctrl` while applying | Use Live Unwrap when the modal `Live Unwrap` preference is disabled, or bypass it when the preference is enabled. |
 | Middle mouse or `Alt` navigation | Pass through to viewport navigation. |
 | `Esc`, right click, or exit shortcut from Easeam modal preferences | Cancel the tool and restore the pre-preview state. |
 
