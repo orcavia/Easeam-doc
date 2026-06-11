@@ -146,8 +146,10 @@
 }
 
 .button.button--product {
-  display: inline-flex;
+  display: inline-flex !important;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(243, 163, 94, 0.14);
   border-color: var(--easeam-accent);
@@ -164,10 +166,16 @@
 }
 
 .productButtonIcon {
+  flex: 0 0 auto;
   display: block;
   width: 24px;
   height: 24px;
   object-fit: contain;
+}
+
+.button.button--product span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .buttonIcon {
