@@ -1,5 +1,109 @@
 // @ts-check
 
+const fs = require('fs');
+const path = require('path');
+
+const legacyRouteRedirectScript = `
+(function () {
+  var legacyBasePath = '/Easeam-doc';
+  var canonicalBasePath = '/easeam';
+  var currentPath = window.location.pathname;
+
+  if (
+    currentPath === legacyBasePath ||
+    currentPath === legacyBasePath + '/' ||
+    currentPath.indexOf(legacyBasePath + '/') === 0
+  ) {
+    var targetPath = canonicalBasePath + currentPath.slice(legacyBasePath.length);
+
+    if (targetPath === canonicalBasePath) {
+      targetPath += '/';
+    }
+
+    window.location.replace(targetPath + window.location.search + window.location.hash);
+  }
+})();
+`;
+
+function escapeHtmlAttribute(value) {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;');
+}
+
+function createRedirectHtml(targetPath) {
+  const escapedTargetPath = escapeHtmlAttribute(targetPath);
+  const serializedTargetPath = JSON.stringify(targetPath);
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url=${escapedTargetPath}">
+    <link rel="canonical" href="${escapedTargetPath}">
+    <title>Redirecting...</title>
+    <script>
+      window.location.replace(${serializedTargetPath} + window.location.search + window.location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="${escapedTargetPath}">${escapedTargetPath}</a>.</p>
+  </body>
+</html>
+`;
+}
+
+function legacyEaseamDocRedirectsPlugin() {
+  const legacyBasePath = 'Easeam-doc';
+  const canonicalBasePath = '/easeam/';
+
+  function findGeneratedIndexFiles(directory) {
+    const entries = fs.readdirSync(directory, {withFileTypes: true});
+    const indexFiles = [];
+
+    for (const entry of entries) {
+      const absolutePath = path.join(directory, entry.name);
+
+      if (entry.isDirectory()) {
+        if (entry.name === legacyBasePath) {
+          continue;
+        }
+
+        indexFiles.push(...findGeneratedIndexFiles(absolutePath));
+      } else if (entry.isFile() && entry.name === 'index.html') {
+        indexFiles.push(absolutePath);
+      }
+    }
+
+    return indexFiles;
+  }
+
+  return {
+    name: 'legacy-easeam-doc-redirects',
+    async postBuild({outDir}) {
+      for (const indexFile of findGeneratedIndexFiles(outDir)) {
+        const relativeRoute = path
+          .dirname(path.relative(outDir, indexFile))
+          .replaceAll(path.sep, '/');
+        const routeSuffix = relativeRoute === '.' ? '' : relativeRoute;
+        const targetPath = routeSuffix
+          ? `${canonicalBasePath}${routeSuffix}`
+          : canonicalBasePath;
+        const redirectDirectory = path.join(outDir, legacyBasePath, routeSuffix);
+
+        fs.mkdirSync(redirectDirectory, {recursive: true});
+        fs.writeFileSync(
+          path.join(redirectDirectory, 'index.html'),
+          createRedirectHtml(targetPath),
+        );
+      }
+    },
+  };
+}
+
 const config = {
   title: 'Easeam 2',
   tagline: 'Blender UV seam marking, unwrap tools, and UV map management documentation.',
@@ -45,6 +149,16 @@ const config = {
         },
       },
     ],
+  ],
+
+  plugins: [legacyEaseamDocRedirectsPlugin],
+
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: legacyRouteRedirectScript,
+    },
   ],
 
   themeConfig: {
