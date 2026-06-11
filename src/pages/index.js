@@ -2,8 +2,13 @@ import React from 'react';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
-import DiscordIcon from '../icons/discord.svg';
-import SuperhiveIcon from '../icons/superhive.svg';
+import DiscordIcon from '../icons/discord.png';
+import GumroadIcon from '../icons/gumroad.png';
+import SuperhiveIcon from '../icons/superhive.png';
+
+const superhiveUrl = 'https://superhivemarket.com/products/easeam-2';
+const gumroadUrl = 'https://orcavia.gumroad.com/l/easeam2';
+const discordUrl = 'https://discord.gg/MznXAXeYQN';
 
 const seoKeywords = [
   'Easeam 2',
@@ -188,23 +193,33 @@ const communityLinks = [
   {
     title: 'Superhive',
     label: 'Superhive, formerly Blender Market',
-    href: 'https://superhivemarket.com/products/easeam-2',
+    href: superhiveUrl,
     icon: SuperhiveIcon,
+  },
+  {
+    title: 'Gumroad',
+    label: 'Buy Easeam 2 on Gumroad',
+    href: gumroadUrl,
+    icon: GumroadIcon,
   },
   {
     title: 'Discord',
     label: 'Join our Discord',
-    href: 'https://discord.gg/MznXAXeYQN',
+    href: discordUrl,
     icon: DiscordIcon,
   },
 ];
 
-function ExternalLinkIcon() {
+function ProductButton({href, icon, children}) {
   return (
-    <svg className="buttonIcon" aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M7 17 17 7" />
-      <path d="M8 7h9v9" />
-    </svg>
+    <a
+      className="button button--product button--lg"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer">
+      <img className="productButtonIcon" src={icon} alt="" aria-hidden="true" />
+      <span>{children}</span>
+    </a>
   );
 }
 
@@ -223,7 +238,7 @@ export default function Home() {
             <div>
               <h1 className="heroTitle">Easeam 2</h1>
               <p className="developmentNotice">
-                Easeam 2 is now available on Superhive. Documentation is still being expanded.
+                Easeam 2 is now available on Superhive and Gumroad. Documentation is still being expanded.
               </p>
               <p className="heroLead">
                 Easeam 2 is a Blender add-on for faster UV seam marking, unwrap workflows,
@@ -239,19 +254,12 @@ export default function Home() {
                 ))}
               </div>
               <div className="heroActions">
-                <a
-                  className="button button--product button--lg"
-                  href="https://superhivemarket.com/products/easeam-2"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Get Easeam 2
-                  <ExternalLinkIcon />
-                </a>
-                <Link
-                  className="button button--quiet button--lg"
-                  to="/operators/modal-operators/seam-edge-loop">
-                  Read seam marking docs
-                </Link>
+                <ProductButton href={superhiveUrl} icon={SuperhiveIcon}>
+                  Get on Superhive
+                </ProductButton>
+                <ProductButton href={gumroadUrl} icon={GumroadIcon}>
+                  Get on Gumroad
+                </ProductButton>
               </div>
             </div>
             <aside className="workflowPanel">
@@ -310,9 +318,14 @@ export default function Home() {
             <h2>Get Easeam & Support</h2>
             <div className="communityLinkGrid">
               {communityLinks.map((item) => (
-                <a key={item.title} className="communityLinkCard" href={item.href}>
+                <a
+                  key={item.title}
+                  className="communityLinkCard"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer">
                   <span className="communityLinkIcon">
-                    <item.icon className="assetIcon" aria-hidden="true" />
+                    <img className="assetIcon" src={item.icon} alt="" aria-hidden="true" />
                   </span>
                   <span>
                     <strong>{item.title}</strong>

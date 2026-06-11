@@ -81,7 +81,7 @@ const config = {
     },
     announcementBar: {
       id: 'development-status',
-      content: 'Easeam 2 is now available on Superhive. Documentation is still being expanded.',
+      content: 'Easeam 2 is now available on Superhive and Gumroad. Documentation is still being expanded.',
       backgroundColor: '#f3a35e',
       textColor: '#1d160f',
       isCloseable: false,
@@ -97,6 +97,11 @@ const config = {
         {
           href: 'https://superhivemarket.com/products/easeam-2',
           label: 'Superhive',
+          position: 'right',
+        },
+        {
+          href: 'https://orcavia.gumroad.com/l/easeam2',
+          label: 'Gumroad',
           position: 'right',
         },
         {

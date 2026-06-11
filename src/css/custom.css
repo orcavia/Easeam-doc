@@ -163,6 +163,13 @@
   text-decoration: none;
 }
 
+.productButtonIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
 .buttonIcon {
   width: 18px;
   height: 18px;
@@ -333,7 +340,7 @@
 
 .communityLinkGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -389,9 +396,15 @@
   color: var(--ifm-color-primary);
 }
 
-.communityLinkIcon svg {
+.communityLinkIcon svg,
+.communityLinkIcon .assetIcon {
   width: 32px;
   height: 32px;
+}
+
+.communityLinkIcon .assetIcon {
+  display: block;
+  object-fit: contain;
 }
 
 .communityLinkIcon #Mark {
