@@ -56,7 +56,7 @@ Existing seams act as hard boundaries. The preview can expand across the availab
 </p>
 
 <div className="relatedOperatorCard">
-  <a href="/Easeam-doc/operators/non-modal-operators/around-flat-selection">
+  <a href="/easeam/operators/non-modal-operators/around-flat-selection">
     <strong>Around Flat (Selection)</strong>
     <span>Use the non-modal operator when seed faces are already selected and you want a direct one-shot flat-region seam.</span>
   </a>

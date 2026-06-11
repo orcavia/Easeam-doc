@@ -47,7 +47,7 @@ Existing seams act as hard limits. The preview follows the edge loop only throug
 </p>
 
 <div className="relatedOperatorCard">
-  <a href="/Easeam-doc/operators/non-modal-operators/limit-loop-selection">
+  <a href="/easeam/operators/non-modal-operators/limit-loop-selection">
     <strong>Limit Loop (Selection)</strong>
     <span>Use the non-modal operator when seed edges are already selected and you want a direct one-shot loop seam.</span>
   </a>

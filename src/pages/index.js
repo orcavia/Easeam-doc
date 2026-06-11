@@ -29,7 +29,7 @@ const structuredData = {
   headline: 'Easeam 2 Blender UV Seam & Unwrap Documentation',
   description:
     'Documentation for Easeam 2, a Blender add-on for UV seam marking, unwrap workflows, UV island cleanup, and UV map management.',
-  url: 'https://orcavia.dev/Easeam-doc/',
+  url: 'https://orcavia.dev/easeam/',
   about: [
     'Blender add-on',
     'UV seam marking',

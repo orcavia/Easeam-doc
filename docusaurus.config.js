@@ -10,10 +10,10 @@ const config = {
   },
 
   url: 'https://orcavia.dev',
-  baseUrl: '/Easeam-doc/',
+  baseUrl: '/easeam/',
 
   organizationName: 'orcavia',
-  projectName: 'Easeam-doc',
+  projectName: 'easeam',
 
   onBrokenLinks: 'throw',
   markdown: {

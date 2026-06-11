@@ -59,7 +59,7 @@ function OperatorsLink() {
     }
 
     event.preventDefault();
-    window.location.href = `${window.location.origin}/Easeam-doc/#features`;
+    window.location.href = `${window.location.origin}/easeam/#features`;
   }
 
   return (

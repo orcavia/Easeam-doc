@@ -49,7 +49,7 @@ Auto Grow follows the tube until the next bend reaches the Angle limit. Toggle i
 </p>
 
 <div className="relatedOperatorCard">
-  <a href="/Easeam-doc/operators/non-modal-operators/tube-seam-selection">
+  <a href="/easeam/operators/non-modal-operators/tube-seam-selection">
     <strong>Tube Seam (Selection)</strong>
     <span>Use the non-modal operator when seed edges are already selected and you want a direct one-shot tube seam.</span>
   </a>
