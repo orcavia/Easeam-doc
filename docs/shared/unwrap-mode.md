@@ -6,6 +6,9 @@ description: Shared Easeam unwrap mode behavior used by seam marking operators.
 slug: /shared/unwrap-mode
 ---
 
+import liveOffGif from './live_off.gif';
+import liveOnGif from './live_on.gif';
+
 # Unwrap Mode
 
 Several Easeam operators can update UVs after marking seams. Use Unwrap Mode to choose whether the operator only marks seams or also unwraps the affected area.
@@ -24,12 +27,29 @@ Keep Unwrap Mode on `None` while exploring seam placement. Switch to `Selected` 
 
 Modal tools have a `Live Unwrap` preference in Modal Settings. It is disabled by default.
 
-Live Unwrap is only evaluated when you apply the preview, not while hovering. When `Live Unwrap` is disabled, hold `Ctrl` while applying to use Live Unwrap for that apply. When `Live Unwrap` is enabled, applying uses Live Unwrap by default and holding `Ctrl` bypasses it.
+Live Unwrap is only evaluated when you apply the preview, not while hovering.
+
+<div className="operatorGifCompare">
+  <figure>
+    <img className="operatorGif" src={liveOffGif} alt="Applying a modal seam with Live Unwrap disabled, then using Ctrl to live unwrap once" />
+    <figcaption>Live Unwrap off: hold `Ctrl` while applying to use Live Unwrap once.</figcaption>
+  </figure>
+  <figure>
+    <img className="operatorGif" src={liveOnGif} alt="Applying a modal seam with Live Unwrap enabled, then using Ctrl to bypass live unwrap once" />
+    <figcaption>Live Unwrap on: hold `Ctrl` while applying to bypass Live Unwrap once.</figcaption>
+  </figure>
+</div>
+
+When `Live Unwrap` is disabled, applying marks seams without a live unwrap. When `Live Unwrap` is enabled, applying uses Live Unwrap by default.
+
+:::tip
+`Ctrl` + click temporarily flips the modal `Live Unwrap` behavior. If Live Unwrap is off, `Ctrl` + click applies with Live Unwrap. If Live Unwrap is on, `Ctrl` + click applies without Live Unwrap.
+:::
 
 ## Modal Exit Re-Unwrap
 
-If `Re-Unwrap On Exit` is enabled, Operator will re-unwrap all visible geometry once on exit, even if the modal tool is cancelled.
+If `Re-Unwrap On Exit` is enabled, the operator re-unwraps all visible geometry once on exit, even if the modal tool is cancelled.
 
-:::tip
-If unwrapping is not working, even when using Blender's built-in unwrap tools, try remove the affected UV channel and add it again.
+:::warning
+If unwrapping is not working, even when using Blender's built-in unwrap tools, remove the affected UV channel and add it again.
 :::

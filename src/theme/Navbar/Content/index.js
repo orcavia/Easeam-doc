@@ -85,7 +85,7 @@ function DocsHomeLink() {
 }
 
 function VersionBadge() {
-  return <span className="navbar-version-badge">v2.0.0</span>;
+  return <span className="navbar-version-badge">v2.0.1</span>;
 }
 
 function NavbarContentLayout({left, right}) {
