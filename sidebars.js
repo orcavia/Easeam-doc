@@ -2,6 +2,7 @@
 
 const sidebars = {
   operatorsSidebar: [
+    'changelog',
     {
       type: 'category',
       label: 'Modal Operators',

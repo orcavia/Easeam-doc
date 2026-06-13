@@ -209,6 +209,11 @@ const config = {
           label: 'Operators',
         },
         {
+          to: '/operators/changelog',
+          position: 'left',
+          label: 'Changelog',
+        },
+        {
           href: 'https://superhivemarket.com/products/easeam-2',
           label: 'Superhive',
           position: 'right',
